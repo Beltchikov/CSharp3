@@ -15,12 +15,21 @@ namespace CSharp3
             var departments = Repository.GetDepartments();
 
             // Method syntax
-            var innerJoin = departments.Join(employees, d => d.Id, e => e.DepartmentId,
-                (department, employee) => new
-                {
-                    Department = department,
-                    Employee = employee
-                });
+            //var innerJoin = departments.Join(employees, d => d.Id, e => e.DepartmentId,
+            //    (department, employee) => new
+            //    {
+            //        Department = department,
+            //        Employee = employee
+            //    });
+
+            // Query synatx
+            var innerJoin = from department in departments
+                            join employee in employees on department.Id equals employee.DepartmentId
+                            select new
+                            {
+                                Department = department,
+                                Employee = employee
+                            };
 
             Console.WriteLine("InnerJoin.Demo");
             foreach (var departmentEmployee in innerJoin)
