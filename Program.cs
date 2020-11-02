@@ -7,7 +7,7 @@ namespace CSharp3
         static void Main(string[] args)
         {
             GroupJoin.Demo();
-            Console.WriteLine("Hello World!");
+           
         }
     }
 }
