@@ -13,12 +13,23 @@ namespace CSharp3
             var employees = GetEmployees();
             var departments = GetDepartments();
 
+            // Method syntax
             var employeesByDepartmentList = departments.GroupJoin(employees, d => d.Id, e => e.DepartmentId,
-                (department, employees) => new { 
+                (department, employees) => new
+                {
                     Department = department,
                     Employees = employees
                 });
 
+            // Query syntax
+            //var employeesByDepartmentList = from department in departments
+            //                                join employee in employees on department.Id equals employee.DepartmentId
+            //                                into departmentJoinedWithEmployees
+            //                                select new
+            //                                {
+            //                                    Department = department,
+            //                                    Employees = departmentJoinedWithEmployees
+            //                                };
 
             Console.WriteLine("GroupJoin.Demo");
             foreach (var employeesByDepartment in employeesByDepartmentList)
