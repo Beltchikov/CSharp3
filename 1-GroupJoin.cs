@@ -1,4 +1,5 @@
-﻿using CSharp3.Model;
+﻿using CSharp3.Data;
+using CSharp3.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace CSharp3
     {
         public static void Demo()
         {
-            var employees = GetEmployees();
-            var departments = GetDepartments();
+            var employees = Repository.GetEmployees();
+            var departments = Repository.GetDepartments();
 
             // Method syntax
             var employeesByDepartmentList = departments.GroupJoin(employees, d => d.Id, e => e.DepartmentId,
@@ -43,27 +44,6 @@ namespace CSharp3
             Console.WriteLine("--------------------------------------------");
         }
 
-        private static IList<Employee> GetEmployees()
-        {
-            return new List<Employee>
-            {
-                new Employee {Name = "Fred", DepartmentId = 1},
-                new Employee {Name = "Joshua", DepartmentId = 1},
-                new Employee {Name = "Mary", DepartmentId = 1},
-                new Employee {Name = "Sam", DepartmentId = 2},
-                new Employee {Name = "Serena", DepartmentId = 2},
-                new Employee {Name = "Xavier"},
-            };
-        }
-
-        private static IList<Department> GetDepartments()
-        {
-            return new List<Department>
-            {
-                new Department { Name = "Business", Id = 1 },
-                new Department { Name = "Accounting", Id = 2 },
-                new Department { Name = "It", Id = 3 },
-            };
-        }
+       
     }
 }

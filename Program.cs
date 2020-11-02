@@ -7,7 +7,8 @@ namespace CSharp3
         static void Main(string[] args)
         {
             GroupJoin.Demo();
-           
+            InnerJoin.Demo();
+
         }
     }
 }
