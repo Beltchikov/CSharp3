@@ -22,7 +22,7 @@ namespace CSharp3
             //        Employee = employee
             //    });
 
-            // Query synatx
+            // Query syntax
             var innerJoin = from department in departments
                             join employee in employees on department.Id equals employee.DepartmentId
                             select new
