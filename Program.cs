@@ -9,6 +9,7 @@ namespace CSharp3
             GroupJoin.Demo();
             InnerJoin.Demo();
             LeftOuterJoin.Demo();
+            CrossJoin.Demo();
         }
     }
 }
