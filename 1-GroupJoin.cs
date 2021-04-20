@@ -11,6 +11,25 @@ namespace CSharp3
     {
         public static void Demo()
         {
+            // Avanade Example
+            
+            //var input = new[] { 1, 2, 3, 4 };
+            //var enumerable = input
+            //    .Select(x => (number: x, text: x.ToString()))
+            //    .Where(y => 
+            //    {
+            //    Console.WriteLine(y.number);
+            //    return y.number <= 3;
+            //    })
+            //    .SelectMany(z => z.text);  // We do not need SelectMany
+
+            //Console.WriteLine("Output");
+            //Console.WriteLine(string.Join("", enumerable.ToList())); // Multiple enumerations of IEnumerable 
+            //Console.WriteLine(string.Join("", enumerable.ToList())); // Multiple enumerations of IEnumerable 
+            //Console.WriteLine("Done");
+
+            //return;
+
             var employees = Repository.GetEmployees();
             var departments = Repository.GetDepartments();
 
